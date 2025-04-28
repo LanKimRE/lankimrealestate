@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lan Kim Real Estate | Trusted Home Buying & Selling Guidance</title>
+    <meta name="description" content="Helping professionals in Greater Seattle buy smart, sell strategically, and build long-term wealth through real estate. Personalized, expert guidance every step of the way.">
+    <meta property="og:title" content="Lan Kim Real Estate | Trusted Home Buying & Selling Guidance" />
+    <meta property="og:description" content="Helping professionals in Greater Seattle buy smart, sell strategically, and build long-term wealth through real estate." />
+    <meta property="og:image" content="logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourfinaldomain.com" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white transition-all duration-300" id="nav">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0">
+                    <a href="#">
+                        <img src="./logo.png" alt="Lan Kim Real Estate" class="h-24 transition-all duration-300" id="logo">
+                    </a>
+                </div>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-800 hover:text-gray-600 transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-800 hover:text-gray-600 transition-colors">About</a>
+                    <a href="#contact" class="text-gray-800 hover:text-gray-600 transition-colors">Work with Me</a>
+                </div>
+                <!-- Mobile Navigation Button -->
+                <div class="md:hidden relative z-50">
+                    <button id="menu-button" class="text-gray-800 hover:text-gray-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 right-0 bg-white shadow-lg z-40">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="index.html" class="block px-3 py-2 text-gray-800 hover:text-gray-600 transition-colors">Home</a>
+                    <a href="about.html" class="block px-3 py-2 text-gray-800 hover:text-gray-600 transition-colors">About</a>
+                    <a href="#contact" class="block px-3 py-2 text-gray-800 hover:text-gray-600 transition-colors">Work with Me</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Slideshow -->
+    <div class="relative h-screen -mt-20">
+        <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+        <div class="absolute inset-0 flex items-center justify-center z-20">
+            <div class="text-center text-white px-4">
+                <h1 class="text-3xl md:text-5xl font-serif font-bold mb-4 tracking-wide">Real Estate, Personalized for You</h1>
+                <p class="text-lg md:text-xl mb-8 font-light tracking-wide">I help professionals in Greater Seattle buy smart, avoid costly mistakes, and build long-term wealth through real estate.</p>
+                <a href="#contact" class="bg-white text-gray-800 px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition duration-300 tracking-wide">Work with Me</a>
+            </div>
+        </div>
+        <div class="slideshow-container z-0">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Modern Home 1" class="slideshow-image active">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Modern Home 2" class="slideshow-image">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Modern Home 3" class="slideshow-image">
+            <img src="https://images.unsplash.com/photo-1600607687929-5ec69c5e9e3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Modern Home 4" class="slideshow-image">
+            <img src="https://images.unsplash.com/photo-1600607687644-c7171b4249b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Modern Home 5" class="slideshow-image">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Modern Home 6" class="slideshow-image">
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="bg-white">
+        <div class="max-w-6xl mx-auto px-4 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif font-bold text-gray-800 mb-12">Services</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="text-4xl mb-4">🏠</div>
+                    <h3 class="text-lg font-serif font-semibold mb-2">Smart Home Buying Strategy</h3>
+                    <p class="text-gray-600 font-light">I help craft stronger offers and avoid overpaying with expert property analysis.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-lg font-serif font-semibold mb-2">First-Time Buyer Coaching</h3>
+                    <p class="text-gray-600 font-light">I provide step-by-step guidance to make your first purchase clear and stress-free.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl mb-4">🏡</div>
+                    <h3 class="text-lg font-serif font-semibold mb-2">Maximized Home Selling Strategy</h3>
+                    <p class="text-gray-600 font-light">I help maximize your sale price with smart prep, pricing, and smooth transactions.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl mb-4">📈</div>
+                    <h3 class="text-lg font-serif font-semibold mb-2">Home Value and Market Insights</h3>
+                    <p class="text-gray-600 font-light">I provide real-time data and personalized property valuations.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl mb-4">🤝</div>
+                    <h3 class="text-lg font-serif font-semibold mb-2">Trusted Vendor Network Access</h3>
+                    <p class="text-gray-600 font-light">I connect you with my network of trusted lenders, inspectors, and contractors.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl mb-4">📜</div>
+                    <h3 class="text-lg font-serif font-semibold mb-2">Negotiation Expertise</h3>
+                    <p class="text-gray-600 font-light">I use my negotiation skills to help you win better deals and protect your interests, whether buying or selling.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div id="contact" class="max-w-6xl mx-auto px-4 py-16">
+        <div class="bg-white rounded-lg shadow-md p-8 max-w-2xl mx-auto">
+            <h2 class="text-3xl font-serif font-semibold text-gray-800 mb-8 text-center">Contact Me</h2>
+            <form action="https://usebasin.com/f/8679905d2a79" method="POST" class="space-y-6" id="contact-form">
+                <div>
+                    <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                    <input type="text" id="name" name="name" required 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-800 focus:border-transparent">
+                </div>
+                <div>
+                    <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                    <input type="email" id="email" name="email" required 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-800 focus:border-transparent">
+                </div>
+                <div>
+                    <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number (so I can call or text you quickly)</label>
+                    <input type="tel" id="phone" name="phone" required 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-800 focus:border-transparent">
+                </div>
+                <div>
+                    <label for="message" class="block text-gray-700 font-medium mb-2">Message (Optional)</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Anything you want me to know?"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-800 focus:border-transparent placeholder-gray-400"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" 
+                        class="bg-gray-800 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-700 transition-colors duration-300">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+            <div id="success-message" class="hidden text-center mt-8">
+                <p class="text-green-600 text-lg font-serif">Thank you! I'll get back to you within 24 hours.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-serif font-semibold mb-4">Lan Kim RE</h3>
+                    <p class="text-gray-400 font-light">Your trusted real estate partner</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-serif font-semibold mb-4">Social Media</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://www.linkedin.com/in/lan-kim" target="_blank" class="text-gray-400 hover:text-white font-light">LinkedIn</a></li>
+                        <li><a href="https://www.instagram.com/lankimre" target="_blank" class="text-gray-400 hover:text-white font-light">Instagram</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-serif font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-400 font-light">Email: Lan@Lankimre.com</p>
+                    <p class="text-gray-400 font-light">Phone: (425) 275-6184</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p class="font-light">&copy; 2024 Lan Kim Real Estate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.slideshow-image');
+            let currentImageIndex = 0;
+
+            function showNextImage() {
+                images[currentImageIndex].classList.remove('active');
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                images[currentImageIndex].classList.add('active');
+            }
+
+            // Show first image immediately
+            images[0].classList.add('active');
+
+            // Start slideshow
+            setInterval(showNextImage, 10000); // 10 seconds
+
+            // Scroll behavior for logo
+            const logo = document.getElementById('logo');
+            const nav = document.querySelector('nav');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    logo.classList.remove('h-24');
+                    logo.classList.add('h-16');
+                } else {
+                    logo.classList.remove('h-16');
+                    logo.classList.add('h-24');
+                }
+            });
+
+            // Form submission handling
+            const form = document.getElementById('contact-form');
+            const successMessage = document.getElementById('success-message');
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        form.reset();
+                        form.style.display = 'none';
+                        successMessage.classList.remove('hidden');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            });
+
+            // Slideshow functionality
+            const slides = [
+                'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80',
+                'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80',
+                'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80'
+            ];
+            let currentSlide = 0;
+            const slideshowContainer = document.getElementById('slideshow-container');
+            const slideshowImage = document.getElementById('slideshow-image');
+
+            // Preload all images
+            slides.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+
+            function updateSlideshow() {
+                // Fade out current image
+                slideshowImage.style.opacity = '0';
+                
+                // After fade out, update image source and fade in
+                setTimeout(() => {
+                    slideshowImage.src = slides[currentSlide];
+                    slideshowImage.style.opacity = '1';
+                    
+                    // Update current slide index with seamless loop
+                    currentSlide = (currentSlide + 1) % slides.length;
+                }, 500); // Match this with the transition duration in CSS
+            }
+
+            // Start slideshow
+            updateSlideshow();
+            setInterval(updateSlideshow, 5000);
+
+            // Mobile menu functionality
+            const button = document.getElementById('menu-button');
+            const menu = document.getElementById('mobile-menu');
+
+            if (button && menu) {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    menu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html> 
