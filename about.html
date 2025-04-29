@@ -31,15 +31,107 @@
                     <a href="index.html#contact" class="text-gray-800 hover:text-gray-600 transition-colors">Work with Me</a>
                 </div>
                 <div class="md:hidden">
-                    <button class="text-gray-800 hover:text-gray-600">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
+                    <div id="menu-toggle" class="menu-toggle">
+                        ☰
+                    </div>
                 </div>
+            </div>
+            <div id="nav-links" class="nav-links">
+                <a href="index.html" class="block px-3 py-2 text-gray-800 hover:text-gray-600">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-800 hover:text-gray-600">About</a>
+                <a href="index.html#contact" class="block px-3 py-2 text-gray-800 hover:text-gray-600">Work with Me</a>
             </div>
         </div>
     </nav>
+
+    <style>
+        /* Base nav hidden on mobile */
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            background-color: white;
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            width: 200px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            padding: 10px;
+            border-radius: 8px;
+            z-index: 1000;
+        }
+
+        /* When active, show nav */
+        .nav-links.active {
+            display: flex;
+        }
+
+        /* Hamburger Icon */
+        .menu-toggle {
+            font-size: 30px;
+            cursor: pointer;
+            user-select: none;
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        /* Desktop view (show nav normally) */
+        @media (min-width: 768px) {
+            .menu-toggle {
+                display: none;
+            }
+            .nav-links {
+                display: none !important;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Logo resize on scroll
+            const logo = document.getElementById('logo');
+            const nav = document.getElementById('nav');
+            let lastScroll = 0;
+
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                
+                // Logo resize
+                if (currentScroll > 50) {
+                    logo.classList.add('h-16');
+                    logo.classList.remove('h-24');
+                } else {
+                    logo.classList.remove('h-16');
+                    logo.classList.add('h-24');
+                }
+
+                // Nav background
+                if (currentScroll > 50) {
+                    nav.classList.add('shadow-md');
+                } else {
+                    nav.classList.remove('shadow-md');
+                }
+
+                lastScroll = currentScroll;
+            });
+
+            // Mobile menu functionality
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                        navLinks.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
 
     <!-- About Section -->
     <div class="max-w-6xl mx-auto px-4 py-16">
@@ -126,21 +218,21 @@ With over six years of experience, I'm here to help you make confident, informed
         <div class="max-w-6xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-xl font-semibold mb-4">Lan Kim RE</h3>
-                    <p class="text-gray-400">Your trusted real estate partner</p>
+                    <h3 class="text-lg font-serif font-semibold mb-4">Lan Kim RE</h3>
+                    <p class="text-gray-400 font-light">Your trusted real estate partner</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <h3 class="text-lg font-serif font-semibold mb-4">Social Media</h3>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-white">About</a></li>
-                        <li><a href="listings.html" class="text-gray-400 hover:text-white">Listings</a></li>
+                        <li><a href="https://www.zillow.com/profile/LanKimRE" target="_blank" class="text-gray-400 hover:text-white font-light">Zillow</a></li>
+                        <li><a href="https://www.linkedin.com/in/lankimre" target="_blank" class="text-gray-400 hover:text-white font-light">LinkedIn</a></li>
+                        <li><a href="https://www.instagram.com/lankimre" target="_blank" class="text-gray-400 hover:text-white font-light">Instagram</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-xl font-semibold mb-4">Contact</h3>
-                    <p class="text-gray-400">Email: info@lankimre.com</p>
-                    <p class="text-gray-400">Phone: (123) 456-7890</p>
+                    <h3 class="text-lg font-serif font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-400 font-light">Email: Lan@Lankimre.com</p>
+                    <p class="text-gray-400 font-light">Phone: (425) 275-6184</p>
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">

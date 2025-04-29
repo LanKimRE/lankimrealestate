@@ -19,6 +19,75 @@
         html {
             scroll-behavior: smooth;
         }
+        /* Base nav hidden on mobile */
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            background-color: white;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1rem;
+            z-index: 1000;
+            transform: translateY(-10px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        /* When active, show nav */
+        .nav-links.active {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Hamburger Icon */
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            padding: 0;
+            background: transparent;
+            border: none;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: #1f2937;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        /* Desktop view (show nav normally) */
+        @media (min-width: 768px) {
+            .menu-toggle {
+                display: none;
+            }
+            .nav-links {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans">
@@ -27,32 +96,27 @@
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0">
-                    <a href="#">
+                    <a href="index.html">
                         <img src="./logo.png" alt="Lan Kim Real Estate" class="h-24 transition-all duration-300" id="logo">
                     </a>
                 </div>
-                <!-- Desktop Navigation -->
                 <div class="hidden md:flex space-x-8">
                     <a href="index.html" class="text-gray-800 hover:text-gray-600 transition-colors">Home</a>
                     <a href="about.html" class="text-gray-800 hover:text-gray-600 transition-colors">About</a>
-                    <a href="#contact" class="text-gray-800 hover:text-gray-600 transition-colors">Work with Me</a>
+                    <a href="index.html#contact" class="text-gray-800 hover:text-gray-600 transition-colors">Work with Me</a>
                 </div>
-                <!-- Mobile Navigation Button -->
-                <div class="md:hidden relative z-50">
-                    <button id="menu-button" class="text-gray-800 hover:text-gray-600 focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav-links').classList.toggle('active')">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </button>
                 </div>
             </div>
-            <!-- Mobile Navigation Menu -->
-            <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 right-0 bg-white shadow-lg z-40">
-                <div class="px-2 pt-2 pb-3 space-y-1">
-                    <a href="index.html" class="block px-3 py-2 text-gray-800 hover:text-gray-600 transition-colors">Home</a>
-                    <a href="about.html" class="block px-3 py-2 text-gray-800 hover:text-gray-600 transition-colors">About</a>
-                    <a href="#contact" class="block px-3 py-2 text-gray-800 hover:text-gray-600 transition-colors">Work with Me</a>
-                </div>
+            <div id="nav-links" class="nav-links">
+                <a href="index.html" class="block px-3 py-2 text-gray-800 hover:text-gray-600">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-800 hover:text-gray-600">About</a>
+                <a href="index.html#contact" class="block px-3 py-2 text-gray-800 hover:text-gray-600">Work with Me</a>
             </div>
         </div>
     </nav>
@@ -167,7 +231,8 @@
                 <div>
                     <h3 class="text-lg font-serif font-semibold mb-4">Social Media</h3>
                     <ul class="space-y-2">
-                        <li><a href="https://www.linkedin.com/in/lan-kim" target="_blank" class="text-gray-400 hover:text-white font-light">LinkedIn</a></li>
+                        <li><a href="https://www.zillow.com/profile/LanKimRE" target="_blank" class="text-gray-400 hover:text-white font-light">Zillow</a></li>
+                        <li><a href="https://www.linkedin.com/in/lankimre" target="_blank" class="text-gray-400 hover:text-white font-light">LinkedIn</a></li>
                         <li><a href="https://www.instagram.com/lankimre" target="_blank" class="text-gray-400 hover:text-white font-light">Instagram</a></li>
                     </ul>
                 </div>
@@ -185,6 +250,18 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Logo click behavior
+            const logo = document.getElementById('logo');
+            if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
+                logo.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
             const images = document.querySelectorAll('.slideshow-image');
             let currentImageIndex = 0;
 
@@ -200,18 +277,30 @@
             // Start slideshow
             setInterval(showNextImage, 10000); // 10 seconds
 
-            // Scroll behavior for logo
-            const logo = document.getElementById('logo');
-            const nav = document.querySelector('nav');
-            
+            // Logo resize on scroll
+            const nav = document.getElementById('nav');
+            let lastScroll = 0;
+
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 100) {
-                    logo.classList.remove('h-24');
+                const currentScroll = window.pageYOffset;
+                
+                // Logo resize
+                if (currentScroll > 50) {
                     logo.classList.add('h-16');
+                    logo.classList.remove('h-24');
                 } else {
                     logo.classList.remove('h-16');
                     logo.classList.add('h-24');
                 }
+
+                // Nav background
+                if (currentScroll > 50) {
+                    nav.classList.add('shadow-md');
+                } else {
+                    nav.classList.remove('shadow-md');
+                }
+
+                lastScroll = currentScroll;
             });
 
             // Form submission handling
@@ -273,18 +362,6 @@
             // Start slideshow
             updateSlideshow();
             setInterval(updateSlideshow, 5000);
-
-            // Mobile menu functionality
-            const button = document.getElementById('menu-button');
-            const menu = document.getElementById('mobile-menu');
-
-            if (button && menu) {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    menu.classList.toggle('hidden');
-                });
-            }
         });
     </script>
 </body>
