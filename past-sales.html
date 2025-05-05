@@ -19,32 +19,30 @@
         html {
             scroll-behavior: smooth;
         }
-        /* Base nav hidden on mobile */
+        /* Mobile Menu Styles */
         .nav-links {
             display: none;
-            flex-direction: column;
-            background-color: white;
             position: absolute;
             top: 100%;
             left: 0;
             right: 0;
             width: 100%;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background: white;
             padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             z-index: 1000;
             transform: translateY(-10px);
             opacity: 0;
             transition: all 0.3s ease;
         }
 
-        /* When active, show nav */
         .nav-links.active {
             display: flex;
+            flex-direction: column;
             transform: translateY(0);
             opacity: 1;
         }
 
-        /* Hamburger Icon */
         .menu-toggle {
             display: flex;
             flex-direction: column;
@@ -79,7 +77,6 @@
             transform: translateY(-9px) rotate(-45deg);
         }
 
-        /* Desktop view (show nav normally) */
         @media (min-width: 768px) {
             .menu-toggle {
                 display: none;
@@ -109,7 +106,7 @@
                 </div>
                 <div class="md:hidden flex items-center space-x-4">
                     <a href="tel:+14252756184" class="text-blue-600 hover:text-blue-500 transition-colors">(425) 275-6184</a>
-                    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav-links').classList.toggle('active')">
+                    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -730,6 +727,26 @@
                     <p class="text-lg font-medium text-blue-600">Sold for $310,000</p>
                 </div>
             </div>
+
+            <!-- Sale 61 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="seattle20.png" alt="Seattle Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seattle</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $1,140,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 62 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="maplevalley2.png" alt="Maple Valley Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Maple Valley</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $785,000</p>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -795,15 +812,26 @@
             const navLinks = document.getElementById('nav-links');
 
             if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => {
+                menuToggle.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Prevent event from bubbling up
+                    menuToggle.classList.toggle('active');
                     navLinks.classList.toggle('active');
                 });
 
                 // Close menu when clicking outside
                 document.addEventListener('click', (e) => {
                     if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                        menuToggle.classList.remove('active');
                         navLinks.classList.remove('active');
                     }
+                });
+
+                // Close menu when clicking a link
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuToggle.classList.remove('active');
+                        navLinks.classList.remove('active');
+                    });
                 });
             }
         });
