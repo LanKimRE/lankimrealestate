@@ -6,27 +6,114 @@
     <title>Listings - Lan Kim Real Estate</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Base nav hidden on mobile */
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            background-color: white;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1rem;
+            z-index: 1000;
+            transform: translateY(-10px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        /* When active, show nav */
+        .nav-links.active {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Hamburger Icon */
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            padding: 0;
+            background: transparent;
+            border: none;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: #1f2937;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        /* Desktop view (show nav normally) */
+        @media (min-width: 768px) {
+            .menu-toggle {
+                display: none;
+            }
+            .nav-links {
+                display: none !important;
+            }
+        }
+    </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 font-sans">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg">
+    <nav class="sticky top-0 z-50 bg-white transition-all duration-300" id="nav">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
+            <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0">
-                    <a href="index.html" class="text-2xl font-bold text-gray-800">Lan Kim RE</a>
+                    <a href="index.html">
+                        <img src="./logo.png" alt="Lan Kim Real Estate" class="h-24 transition-all duration-300" id="logo">
+                    </a>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-800 hover:text-gray-600">Home</a>
-                    <a href="about.html" class="text-gray-800 hover:text-gray-600">About</a>
-                    <a href="listings.html" class="text-gray-800 hover:text-gray-600">Listings</a>
+                    <a href="index.html" class="text-gray-800 hover:text-gray-600 transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-800 hover:text-gray-600 transition-colors">About</a>
+                    <a href="past-sales.html" class="text-gray-800 hover:text-gray-600 transition-colors">Past Sales</a>
+                    <a href="index.html#contact" class="text-gray-800 hover:text-gray-600 transition-colors">Work with Me</a>
+                    <a href="tel:+14252756184" class="text-blue-600 hover:text-blue-500 transition-colors">(425) 275-6184</a>
                 </div>
-                <div class="md:hidden">
-                    <button class="text-gray-800 hover:text-gray-600">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
+                <div class="md:hidden flex items-center space-x-4">
+                    <a href="tel:+14252756184" class="text-blue-600 hover:text-blue-500 transition-colors">(425) 275-6184</a>
+                    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav-links').classList.toggle('active')">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </button>
                 </div>
+            </div>
+            <div id="nav-links" class="nav-links">
+                <a href="index.html" class="block px-3 py-2 text-gray-800 hover:text-gray-600">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-800 hover:text-gray-600">About</a>
+                <a href="past-sales.html" class="block px-3 py-2 text-gray-800 hover:text-gray-600">Past Sales</a>
+                <a href="index.html#contact" class="block px-3 py-2 text-gray-800 hover:text-gray-600">Work with Me</a>
+                <a href="tel:+14252756184" class="block px-3 py-2 text-blue-600 hover:text-blue-500">(425) 275-6184</a>
             </div>
         </div>
     </nav>
@@ -165,6 +252,7 @@
                     <ul class="space-y-2">
                         <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
                         <li><a href="about.html" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="past-sales.html" class="text-gray-400 hover:text-white">Past Sales</a></li>
                         <li><a href="listings.html" class="text-gray-400 hover:text-white">Listings</a></li>
                     </ul>
                 </div>
@@ -179,5 +267,53 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Logo resize on scroll
+            const logo = document.getElementById('logo');
+            const nav = document.getElementById('nav');
+            let lastScroll = 0;
+
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                
+                // Logo resize
+                if (currentScroll > 50) {
+                    logo.classList.add('h-16');
+                    logo.classList.remove('h-24');
+                } else {
+                    logo.classList.remove('h-16');
+                    logo.classList.add('h-24');
+                }
+
+                // Nav background
+                if (currentScroll > 50) {
+                    nav.classList.add('shadow-md');
+                } else {
+                    nav.classList.remove('shadow-md');
+                }
+
+                lastScroll = currentScroll;
+            });
+
+            // Mobile menu functionality
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                        navLinks.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html> 

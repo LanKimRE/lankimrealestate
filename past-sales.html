@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Sales | Lan Kim Real Estate</title>
+    <meta name="description" content="View Lan Kim's successful real estate transactions in the Greater Seattle area. See how she has helped clients achieve their real estate goals.">
+    <meta property="og:title" content="Past Sales | Lan Kim Real Estate" />
+    <meta property="og:description" content="View Lan Kim's successful real estate transactions in the Greater Seattle area." />
+    <meta property="og:image" content="logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourfinaldomain.com/past-sales" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Base nav hidden on mobile */
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            background-color: white;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1rem;
+            z-index: 1000;
+            transform: translateY(-10px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        /* When active, show nav */
+        .nav-links.active {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Hamburger Icon */
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            padding: 0;
+            background: transparent;
+            border: none;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: #1f2937;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        /* Desktop view (show nav normally) */
+        @media (min-width: 768px) {
+            .menu-toggle {
+                display: none;
+            }
+            .nav-links {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white transition-all duration-300" id="nav">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html">
+                        <img src="./logo.png" alt="Lan Kim Real Estate" class="h-24 transition-all duration-300" id="logo">
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-800 hover:text-gray-600 transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-800 hover:text-gray-600 transition-colors">About</a>
+                    <a href="past-sales.html" class="text-gray-800 hover:text-gray-600 transition-colors">Past Sales</a>
+                    <a href="index.html#contact" class="text-gray-800 hover:text-gray-600 transition-colors">Work with Me</a>
+                    <a href="tel:+14252756184" class="text-blue-600 hover:text-blue-500 transition-colors">(425) 275-6184</a>
+                </div>
+                <div class="md:hidden flex items-center space-x-4">
+                    <a href="tel:+14252756184" class="text-blue-600 hover:text-blue-500 transition-colors">(425) 275-6184</a>
+                    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav-links').classList.toggle('active')">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+            <div id="nav-links" class="nav-links">
+                <a href="index.html" class="block px-3 py-2 text-gray-800 hover:text-gray-600">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-800 hover:text-gray-600">About</a>
+                <a href="past-sales.html" class="block px-3 py-2 text-gray-800 hover:text-gray-600">Past Sales</a>
+                <a href="index.html#contact" class="block px-3 py-2 text-gray-800 hover:text-gray-600">Work with Me</a>
+                <a href="tel:+14252756184" class="block px-3 py-2 text-blue-600 hover:text-blue-500">(425) 275-6184</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-8">Past Sales</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Sale 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="seattle19.png" alt="Seattle Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seattle</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $775,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="issaquah4.png" alt="Issaquah Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Issaquah</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $1,940,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="bothell5.png" alt="Bothell Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Bothell</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $750,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 4 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="seattle7.png" alt="Seattle Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seattle</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $280,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 5 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="kirkland4.png" alt="Kirkland Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Kirkland</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $1,475,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 6 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="seattle1.png" alt="Seattle Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seattle</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $398,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 7 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="bellevue10.png" alt="Bellevue Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Bellevue</h3>
+                    <p class="text-gray-600 mb-2">Represented Seller</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $412,250</p>
+                </div>
+            </div>
+
+            <!-- Sale 8 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="seattle2.png" alt="Seattle Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seattle</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $779,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 9 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="seattle3.png" alt="Seattle Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seattle</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $425,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 10 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="seattle4.png" alt="Seattle Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seattle</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $799,950</p>
+                </div>
+            </div>
+
+            <!-- Sale 11 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="kirkland1.png" alt="Kirkland Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Kirkland</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $769,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 12 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="redmond1.png" alt="Redmond Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Redmond</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $678,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 13 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="bellevue1.png" alt="Bellevue Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Bellevue</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $2,670,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 14 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="seattle5.png" alt="Seattle Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seattle</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $755,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 15 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="seattle6.png" alt="Seattle Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seattle</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $699,995</p>
+                </div>
+            </div>
+
+            <!-- Sale 16 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="redmond2.png" alt="Redmond Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Redmond</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $1,570,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 17 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="kirkland2.png" alt="Kirkland Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Kirkland</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $330,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 18 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="kirkland3.png" alt="Kirkland Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Kirkland</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $2,075,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 19 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="issaquah1.png" alt="Issaquah Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Issaquah</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $670,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 20 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="issaquah2.png" alt="Issaquah Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Issaquah</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $2,200,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 21 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="bothell1.png" alt="Bothell Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Bothell</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $1,310,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 22 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="bothell2.png" alt="Bothell Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Bothell</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $653,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 23 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="bothell3.png" alt="Bothell Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Bothell</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $822,500</p>
+                </div>
+            </div>
+
+            <!-- Sale 24 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="seattle8.png" alt="Seattle Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seattle</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $295,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 25 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="seattle9.png" alt="Seattle Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seattle</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $340,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 26 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="seattle10.png" alt="Seattle Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seattle</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $419,500</p>
+                </div>
+            </div>
+
+            <!-- Sale 27 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="seattle11.png" alt="Seattle Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seattle</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $450,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 28 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="seattle12.png" alt="Seattle Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seattle</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $750,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 29 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="seattle13.png" alt="Seattle Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seattle</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $799,950</p>
+                </div>
+            </div>
+
+            <!-- Sale 30 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="seattle14.png" alt="Seattle Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seattle</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $575,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 31 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="seattle15.png" alt="Seattle Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seattle</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $699,880</p>
+                </div>
+            </div>
+
+            <!-- Sale 32 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="seattle16.png" alt="Seattle Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seattle</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $896,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 33 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="shoreline1.png" alt="Shoreline Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Shoreline</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $725,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 34 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="bothell4.png" alt="Bothell Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Bothell</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $1,075,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 35 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="everett1.png" alt="Everett Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Everett</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $375,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 36 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="millcreek1.png" alt="Mill Creek Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Mill Creek</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $412,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 37 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="millcreek2.png" alt="Mill Creek Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Mill Creek</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $470,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 38 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="snohomish1.png" alt="Snohomish Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Snohomish</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $775,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 39 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="lakestevens1.png" alt="Lake Stevens Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Lake Stevens</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $700,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 40 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="northbend1.png" alt="North Bend Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">North Bend</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $1,150,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 41 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="issaquah3.png" alt="Issaquah Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Issaquah</h3>
+                    <p class="text-gray-600 mb-2">Represented Seller</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $585,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 42 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="maplevalley1.png" alt="Maple Valley Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Maple Valley</h3>
+                    <p class="text-gray-600 mb-2">Represented Seller</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $700,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 43 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="lynnwood1.png" alt="Lynnwood Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Lynnwood</h3>
+                    <p class="text-gray-600 mb-2">Represented Seller</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $415,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 44 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="lynnwood2.png" alt="Lynnwood Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Lynnwood</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $475,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 45 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="mukilteo1.png" alt="Mukilteo Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Mukilteo</h3>
+                    <p class="text-gray-600 mb-2">Represented Seller</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $565,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 46 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="desmoines1.png" alt="Des Moines Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Des Moines</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $700,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 47 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="bremerton1.png" alt="Bremerton Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Bremerton</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $455,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 48 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="covington1.png" alt="Covington Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Covington</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $670,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 49 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="kent1.png" alt="Kent Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Kent</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $847,050</p>
+                </div>
+            </div>
+
+            <!-- Sale 50 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="renton1.png" alt="Renton Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Renton</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $248,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 51 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="renton2.png" alt="Renton Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Renton</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $408,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 52 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="renton3.png" alt="Renton Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Renton</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $477,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 53 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="olympia1.png" alt="Olympia Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Olympia</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $593,458</p>
+                </div>
+            </div>
+
+            <!-- Sale 54 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="duvall1.png" alt="Duvall Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Duvall</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $754,990</p>
+                </div>
+            </div>
+
+            <!-- Sale 55 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="redmond3.png" alt="Redmond Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Redmond</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $1,051,555</p>
+                </div>
+            </div>
+
+            <!-- Sale 56 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="woodinville.png" alt="Woodinville Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Woodinville</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $910,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 57 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="seattle18.png" alt="Seattle Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Seattle</h3>
+                    <p class="text-gray-600 mb-2">Represented Buyer</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $732,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 58 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="federalway1.png" alt="Federal Way Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Federal Way</h3>
+                    <p class="text-gray-600 mb-2">Represented Seller</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $695,000</p>
+                </div>
+            </div>
+
+            <!-- Sale 59 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="tukwila1.png" alt="Tukwila Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Tukwila</h3>
+                    <p class="text-gray-600 mb-2">Represented Seller</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $522,500</p>
+                </div>
+            </div>
+
+            <!-- Sale 60 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden property-card">
+                <img src="everett2.png" alt="Everett Property" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Everett</h3>
+                    <p class="text-gray-600 mb-2">Represented Seller</p>
+                    <p class="text-lg font-medium text-blue-600">Sold for $310,000</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-serif font-semibold mb-4">Lan Kim RE</h3>
+                    <p class="text-gray-400 font-light">Your trusted real estate partner</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-serif font-semibold mb-4">Social Media</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://www.zillow.com/profile/lankimm" target="_blank" class="text-gray-400 hover:text-white font-light">Zillow</a></li>
+                        <li><a href="https://www.linkedin.com/in/lan-kim" target="_blank" class="text-gray-400 hover:text-white font-light">LinkedIn</a></li>
+                        <li><a href="https://www.instagram.com/thelankim/" target="_blank" class="text-gray-400 hover:text-white font-light">Instagram</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-serif font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-400 font-light">Email: <a href="mailto:Lan@Lankimre.com" class="hover:text-white">Lan@Lankimre.com</a></p>
+                    <p class="text-gray-400 font-light">Phone: <a href="tel:+14252756184" class="hover:text-white">(425) 275-6184</a></p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p class="font-light">&copy; 2024 Lan Kim Real Estate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Logo resize on scroll
+            const logo = document.getElementById('logo');
+            const nav = document.getElementById('nav');
+            let lastScroll = 0;
+
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                
+                // Logo resize
+                if (currentScroll > 50) {
+                    logo.classList.add('h-16');
+                    logo.classList.remove('h-24');
+                } else {
+                    logo.classList.remove('h-16');
+                    logo.classList.add('h-24');
+                }
+
+                // Nav background
+                if (currentScroll > 50) {
+                    nav.classList.add('shadow-md');
+                } else {
+                    nav.classList.remove('shadow-md');
+                }
+
+                lastScroll = currentScroll;
+            });
+
+            // Mobile menu functionality
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                        navLinks.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html> 
